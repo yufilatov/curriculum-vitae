@@ -47,14 +47,14 @@ export const cv: Record<Lang, CvCopy> = {
   en: {
     name: "Yury Filatov",
     role: "Senior Frontend Developer",
-    focus: "Angular  ·  TypeScript  ·  Design Systems",
+    focus: "Frontend  ·  Angular  ·  TypeScript  ·  Node.js  ·  Design Systems",
     summary:
       "Senior frontend developer with seven years in Angular, from feature delivery through architecture, review, and release. Shipped a real-time sports microbetting web component, a shared UI library for international clients, and the public frontend of a federal environmental monitoring system. Comfortable planning with customers and partner engineers in English.",
     email,
     phone: "+7 931 368 68 55",
     phoneHref,
     hint: "Switch language, then print. The browser saves this page as an A4 PDF.",
-    print: "Print / Save PDF",
+    print: "Print",
     sections: {
       experience: "Experience",
       education: "Education",
@@ -156,14 +156,14 @@ export const cv: Record<Lang, CvCopy> = {
   ru: {
     name: "Юрий Филатов",
     role: "Старший фронтенд-разработчик",
-    focus: "Angular 5–20  ·  TypeScript  ·  дизайн-системы  ·  интерфейсы реального времени",
+    focus: "Фронтенд  ·  Angular  ·  TypeScript  ·  Node.js  ·  Проектирование систем",
     summary:
-      "Старший фронтенд-разработчик с семью годами опыта на Angular: от фич до архитектуры, ревью и релизов. Делал веб-компонент для спортивных микроставок в реальном времени, общую UI-библиотеку для международных заказчиков и публичную часть федеральной системы экологического мониторинга. Вёл планирование с заказчиками и инженерными командами партнёров на английском языке.",
+      "Старший фронтенд-разработчик с семью годами опыта на Angular: от фич до архитектуры, ревью и релизов. Делал веб-компонент для спортивных микроставок в реальном времени, общую UI-библиотеку для международных заказчиков и публичную часть федеральной системы экологического мониторинга. Вёл планирование с заказчиками и инженерными командами партнёров на русском и английском языках.",
     email,
     phone: "+7 931 368 68 55",
     phoneHref,
     hint: "Переключите язык и напечатайте страницу. Браузер сохранит её как PDF формата A4.",
-    print: "Печать / PDF",
+    print: "Печать",
     sections: {
       experience: "Опыт",
       education: "Образование",

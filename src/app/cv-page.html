@@ -11,11 +11,11 @@
         English
       </a>
       <a routerLink="/ru" routerLinkActive="active" ariaCurrentWhenActive="page">
-        Русский1
+        Русский
       </a>
     </nav>
     <a class="cv-download" href="yury-filatov-ru.pdf" download="yury-filatov-ru.pdf">
-      {{ lang() === 'ru' ? 'Скачать PDF' : 'Russian PDF' }}
+      {{ lang() === 'ru' ? 'Скачать PDF' : 'Download PDF' }}
     </a>
     <button type="button" class="cv-download" (click)="print()">{{ copy().print }}</button>
   </div>
