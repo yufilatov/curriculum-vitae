@@ -1,0 +1,101 @@
+<article class="cv-sheet">
+  <header class="cv-head">
+    <p class="cv-kicker">{{ data().role }}</p>
+    <h1 class="cv-name">{{ data().name }}</h1>
+    <p class="cv-focus">{{ data().focus }}</p>
+    <ul class="cv-contact">
+      <li>
+        <a [href]="'mailto:' + data().email">{{ data().email }}</a>
+      </li>
+      <li>
+        <a [href]="data().phoneHref">{{ data().phone }}</a>
+      </li>
+    </ul>
+  </header>
+
+  <p class="cv-summary">{{ data().summary }}</p>
+
+  <section class="cv-section" aria-labelledby="experience">
+    <h2 id="experience">
+      <span>01</span>
+      {{ data().sections.experience }}
+    </h2>
+    <div class="cv-stack">
+      @for (role of data().roles; track role.company + role.dates) {
+        <article class="cv-block">
+          <header class="cv-block-head">
+            <div>
+              <h3>{{ role.title }}</h3>
+              <p class="cv-org">
+                <a [href]="role.href" target="_blank" rel="noopener noreferrer">{{ role.company }}</a>
+                <span class="cv-domain">{{ role.domain }}</span>
+              </p>
+            </div>
+            <p class="cv-dates">{{ role.dates }}</p>
+          </header>
+          <p class="cv-context">{{ role.context }}</p>
+          <ul class="cv-points">
+            @for (point of role.points; track point) {
+              <li>{{ point }}</li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="cv-section" aria-labelledby="education">
+    <h2 id="education">
+      <span>02</span>
+      {{ data().sections.education }}
+    </h2>
+    <div class="cv-stack">
+      @for (study of data().education; track study.school) {
+        <article class="cv-block">
+          <header class="cv-block-head">
+            <div>
+              <h3>{{ study.title }}</h3>
+              <p class="cv-org">
+                <a [href]="study.href" target="_blank" rel="noopener noreferrer">{{ study.school }}</a>
+                <span class="cv-domain">{{ study.place }}</span>
+              </p>
+            </div>
+            <p class="cv-dates">{{ study.dates }}</p>
+          </header>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="cv-section" aria-labelledby="skills">
+    <h2 id="skills">
+      <span>03</span>
+      {{ data().sections.skills }}
+    </h2>
+    <dl class="cv-skills">
+      @for (group of data().skills; track group.label) {
+        <div>
+          <dt>{{ group.label }}</dt>
+          <dd>{{ group.items }}</dd>
+        </div>
+      }
+    </dl>
+  </section>
+
+  <section class="cv-section" aria-labelledby="languages">
+    <h2 id="languages">
+      <span>04</span>
+      {{ data().sections.languages }}
+    </h2>
+    <p class="cv-langline">
+      @for (language of data().languages; track language.name; let i = $index) {
+        <span>
+          @if (i > 0) {
+            <span class="cv-langsep"> · </span>
+          }
+          <strong>{{ language.name }}</strong> {{ language.level }}
+        </span>
+      }
+    </p>
+  </section>
+</article>

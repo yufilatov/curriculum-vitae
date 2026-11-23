@@ -1,0 +1,25 @@
+<div class="no-print cv-toolbar">
+  <p>{{ copy().hint }}</p>
+  <div class="cv-toolbar-actions">
+    <nav [attr.aria-label]="lang() === 'ru' ? 'Язык' : 'Language'">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+      >
+        English
+      </a>
+      <a routerLink="/ru" routerLinkActive="active" ariaCurrentWhenActive="page">
+        Русский1
+      </a>
+    </nav>
+    <a class="cv-download" href="yury-filatov-ru.pdf" download="yury-filatov-ru.pdf">
+      {{ lang() === 'ru' ? 'Скачать PDF' : 'Russian PDF' }}
+    </a>
+    <button type="button" class="cv-download" (click)="print()">{{ copy().print }}</button>
+  </div>
+</div>
+<main class="cv-wrap">
+  <app-cv-document [data]="copy()" />
+</main>
