@@ -44,9 +44,27 @@
     </div>
   </section>
 
+  <section class="cv-section" aria-labelledby="projects">
+    <h2 id="projects">
+      <span>02</span>
+      {{ data().sections.projects }}
+    </h2>
+    <div class="cv-stack">
+      @for (project of data().projects; track project.href) {
+        <article class="cv-block">
+          <h3>{{ project.title }}</h3>
+          <p class="cv-org">
+            <a [href]="project.href" target="_blank" rel="noopener noreferrer">{{ project.label }}</a>
+          </p>
+          <p class="cv-context">{{ project.summary }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
   <section class="cv-section" aria-labelledby="education">
     <h2 id="education">
-      <span>02</span>
+      <span>03</span>
       {{ data().sections.education }}
     </h2>
     <div class="cv-stack">
@@ -69,7 +87,7 @@
 
   <section class="cv-section" aria-labelledby="skills">
     <h2 id="skills">
-      <span>03</span>
+      <span>04</span>
       {{ data().sections.skills }}
     </h2>
     <dl class="cv-skills">
@@ -84,7 +102,7 @@
 
   <section class="cv-section" aria-labelledby="languages">
     <h2 id="languages">
-      <span>04</span>
+      <span>05</span>
       {{ data().sections.languages }}
     </h2>
     <p class="cv-langline">

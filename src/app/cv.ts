@@ -18,6 +18,13 @@ export type Study = {
   dates: string;
 };
 
+export type Project = {
+  title: string;
+  href: string;
+  label: string;
+  summary: string;
+};
+
 export type CvCopy = {
   name: string;
   role: string;
@@ -30,11 +37,13 @@ export type CvCopy = {
   print: string;
   sections: {
     experience: string;
+    projects: string;
     education: string;
     skills: string;
     languages: string;
   };
   roles: Role[];
+  projects: Project[];
   education: Study[];
   skills: { label: string; items: string }[];
   languages: { name: string; level: string }[];
@@ -57,6 +66,7 @@ export const cv: Record<Lang, CvCopy> = {
     print: "Print",
     sections: {
       experience: "Experience",
+      projects: "Pet projects",
       education: "Education",
       skills: "Skills",
       languages: "Languages",
@@ -106,6 +116,15 @@ export const cv: Record<Lang, CvCopy> = {
           "Held the quality bar with code review and unit tests.",
           "Joined planning and negotiations with the client directly, including in English.",
         ],
+      },
+    ],
+    projects: [
+      {
+        title: "D3 Chart Library",
+        href: "https://yufilatov.github.io/charts-library/map",
+        label: "yufilatov.github.io/charts-library/map",
+        summary:
+          "Personal chart library in Angular and D3.",
       },
     ],
     education: [
@@ -166,6 +185,7 @@ export const cv: Record<Lang, CvCopy> = {
     print: "Печать",
     sections: {
       experience: "Опыт",
+      projects: "Пет-проекты",
       education: "Образование",
       skills: "Навыки",
       languages: "Языки",
@@ -215,6 +235,15 @@ export const cv: Record<Lang, CvCopy> = {
           "Контроль качества через код-ревью и покрытие unit-тестами.",
           "Переговоры и планирование с заказчиком напрямую, в том числе на английском языке.",
         ],
+      },
+    ],
+    projects: [
+      {
+        title: "Библиотека графиков D3",
+        href: "https://yufilatov.github.io/charts-library/map",
+        label: "yufilatov.github.io/charts-library/map",
+        summary:
+          "Личная библиотека графиков на Angular и D3.",
       },
     ],
     education: [
